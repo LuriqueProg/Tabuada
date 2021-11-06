@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 004</title>
+    <style>  
+    *{
+        margin: 0;
+        padding: 0;
+    }      
+        body{
+            font: normal normal 16px arial;
+            background-color: rgb(67, 67, 255);      
+            height: 95.5vh;   
+            color: white;   
+        }
+        body h1{
+            text-align: center;
+        }
+        .container{
+            width: 80rem;
+            /* margin: auto; */
+            /* text-align: center; */
+            height: 97.5vh;
+        }
+        header{
+            margin: auto;
+        }
+        section{
+            background-color: #fff;
+            width: 42rem;
+            padding: 1rem;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.651);
+        }
+        section div{
+            color:black;            
+        }        
+        footer{
+            margin: auto;
+            text-align: center;
+            width: 100%;
+            background-color: #000;
+            color: white;
+            font-style: italic;
+        }
+        #btn{
+            cursor:pointer;
+        }
+        input[type=number]{
+            width: 1.8rem;
+            padding: 0 .4rem;
+        }
+        input[type=button], select{
+            text-align: center;
+            margin: auto;
+            width: 100%;
+        }
+        section div p{
+            display: flex;            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tabuada</h1>
+        </header>
+        <section>
+            <div>                
+                <p>Efetuar a tabuada do Número: <input type="number" name="num" id="txtn"> ||||| <input type="number" name="quant" id="txtq"> Vezes</p>                
+                <input type="button" id="btn" value="Gerar Tabuada" onclick="tabuada()">
+            </div>
+            <div>
+                <select name="Tabuada" id="seltab" size="10"></select>
+            </div>
+        </section>        
+    </div>
+    <footer>
+        @Lurique &copy;
+    </footer>
+    <script>    
+        function tabuada(){
+            let num =document.querySelector('#txtn')
+            let tab =document.querySelector('#seltab')
+            let quant = document.querySelector('#txtq')
+            if(num.value.length==0){
+                alert(' [ERROR] Informações invalidas! Digite um Numero')
+            }else{
+                let n = Number(num.value)
+                let q = Number(quant.value)
+                tab.innerHTML=''
+                if(q==0){
+                    alert('A quantidade de vezes que a tabuada vai ser multiplicada não pode ser 0! Considerando como 10')
+                    q = 10
+                }
+                for(var c=1; c<=q;c++){
+                    let item = document.createElement('option')
+                    item.text=`${n} X ${c} = ${n*c}`
+                    tab.appendChild(item)
+                }
+            }
+        }
+    </script>
+</body>
+</html>
