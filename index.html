@@ -20,8 +20,8 @@
             text-align: center;
         }
         .container{
-            width: 80rem;
-            /* margin: auto; */
+            max-width: 50rem;
+            margin: auto;
             /* text-align: center; */
             height: 97.5vh;
         }
@@ -30,7 +30,7 @@
         }
         section{
             background-color: #fff;
-            width: 42rem;
+            max-width: 42rem;
             padding: 1rem;
             margin: auto;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.651);
@@ -74,7 +74,9 @@
                 <input type="button" id="btn" value="Gerar Tabuada" onclick="tabuada()">
             </div>
             <div>
-                <select name="Tabuada" id="seltab" size="10"></select>
+                <select name="Tabuada" id="seltab" size="10">
+                    <option value="">Digite os valores correspondentes acima!!</option>
+                </select>
             </div>
         </section>        
     </div>
